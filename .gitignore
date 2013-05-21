@@ -1,0 +1,16 @@
+*.class
+.classpath
+.project
+*.svn
+*.settings
+*.project
+*.com.powerflasher.fdt.classpath
+.DS_Store
+.metadata
+org.eclipse.core.resources.prefs
+com.powerflasher.fdt.classpath
+/RemoteSystemsTempFiles/.project
+reports/
+/bin
+/build
+/log
