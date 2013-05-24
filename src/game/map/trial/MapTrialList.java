@@ -2,20 +2,22 @@ package game.map.trial;
 
 import game.data.trial.TrialListData;
 import game.map.IMap;
+import game.map.IParse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 试炼集合表
  */
-public class MapTrialList implements IMap {
+public class MapTrialList implements IMap, IParse {
 	// 当前试炼集合信息
-	HashMap<Integer, TrialListData> map;
+	private Map<Integer, TrialListData> map;
 
-	HashMap<Integer, ArrayList<Integer>> mapList;
+	private Map<Integer, ArrayList<Integer>> mapList;
 
-	private static MapTrialList data;
+	private static MapTrialList instance;
 
 	private MapTrialList() {
 		map = new HashMap<Integer, TrialListData>();
@@ -23,20 +25,20 @@ public class MapTrialList implements IMap {
 	}
 
 	public static MapTrialList getInstance() {
-		if (null == data)
-			data = new MapTrialList();
-		return data;
+		if (null == instance)
+			instance = new MapTrialList();
+		return instance;
 	}
 
 	public TrialListData getData(int listId) {
 		return map.get(listId);
 	}
 
-	public HashMap<Integer, ArrayList<Integer>> getList() {
+	public Map<Integer, ArrayList<Integer>> getList() {
 		return mapList;
 	}
 
-	public HashMap<Integer, TrialListData> toMap() {
+	public Map<Integer, TrialListData> getMap() {
 		return map;
 	}
 
@@ -54,5 +56,20 @@ public class MapTrialList implements IMap {
 				this.mapList.put(mapId, list);
 			}
 		}
+	}
+
+	@Override
+	public String getBeanName() {
+		return "value.trial.list.so";
+	}
+
+	@Override
+	public String getIDataName() {
+		return TrialListData.class.getName();
+	}
+
+	@Override
+	public IMap getRoot() {
+		return this;
 	}
 }

@@ -1,9 +1,9 @@
 package game.data.trial;
 
+import game.data.IData;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import game.data.IData;
 
 /**
  * 试炼复活加成数据

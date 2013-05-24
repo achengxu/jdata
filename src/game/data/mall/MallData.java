@@ -35,7 +35,6 @@ public class MallData implements IData {
 	// 介绍
 	private String display;
 
-
 	public final String getName() {
 		return name;
 	}

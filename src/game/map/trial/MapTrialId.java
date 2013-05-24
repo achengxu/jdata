@@ -2,23 +2,25 @@ package game.map.trial;
 
 import game.data.trial.TrialIdData;
 import game.map.IMap;
+import game.map.IParse;
 
 import java.util.HashMap;
+import java.util.Map;
 
-public class MapTrialId implements IMap {
+public class MapTrialId implements IMap,IParse {
 
-	private static MapTrialId trial;
+	private static MapTrialId instance;
 
-	private HashMap<Integer, TrialIdData> map;
+	private Map<Integer, TrialIdData> map;
 
 	private MapTrialId() {
 		map = new HashMap<Integer, TrialIdData>();
 	}
 
 	public static MapTrialId getInstance() {
-		if (null == trial)
-			trial = new MapTrialId();
-		return trial;
+		if (null == instance)
+			instance = new MapTrialId();
+		return instance;
 	}
 
 	public TrialIdData getData(int trialId) {
@@ -31,7 +33,7 @@ public class MapTrialId implements IMap {
 		}
 	}
 
-	public HashMap<Integer, TrialIdData> toMap() {
+	public Map<Integer, TrialIdData> getMap() {
 		return map;
 	}
 
@@ -40,6 +42,21 @@ public class MapTrialId implements IMap {
 			TrialIdData data = (TrialIdData) obj;
 			map.put(data.getId(), data);
 		}
+	}
+
+	@Override
+	public String getBeanName() {
+		return "value.trial.id.so";
+	}
+
+	@Override
+	public String getIDataName() {
+		return TrialIdData.class.getName();
+	}
+
+	@Override
+	public IMap getRoot() {
+		return this;
 	}
 
 }

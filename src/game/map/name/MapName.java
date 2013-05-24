@@ -6,17 +6,18 @@ import game.data.name.NameWomenData;
 import game.map.IMap;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class MapName implements IMap {
 
-	private static MapName data;
+	private static MapName instance;
 
-	private ArrayList<String> tag;
+	private List<String> tag;
 
-	private ArrayList<String> man;
+	private List<String> man;
 
-	private ArrayList<String> women;
+	private List<String> women;
 
 	private MapName() {
 		tag = new ArrayList<String>();
@@ -25,20 +26,20 @@ public class MapName implements IMap {
 	}
 
 	public static MapName getInstance() {
-		if (null == data)
-			data = new MapName();
-		return data;
+		if (null == instance)
+			instance = new MapName();
+		return instance;
 	}
 
-	public ArrayList<String> getTag() {
+	public List<String> getTag() {
 		return tag;
 	}
 
-	public ArrayList<String> getMan() {
+	public List<String> getMan() {
 		return man;
 	}
 
-	public ArrayList<String> getWomen() {
+	public List<String> getWomen() {
 		return women;
 	}
 
@@ -64,7 +65,7 @@ public class MapName implements IMap {
 		return null != value && value.trim().length() > 0;
 	}
 
-	public Map<?, ?> toMap() {
+	public Map<?, ?> getMap() {
 		return null;
 	}
 
@@ -77,5 +78,19 @@ public class MapName implements IMap {
 			addMan(obj.toString());
 		}
 	}
+
+	public void add(int index, String value) {
+		if (index == TAG) {
+			addTag(value);
+		} else if (index == WOMEN) {
+			addWomen(value);
+		} else if (index == MAN) {
+			addMan(value);
+		}
+	}
+
+	public final static int TAG = 0;
+	public final static int WOMEN = 1;
+	public final static int MAN = 2;
 
 }

@@ -2,19 +2,21 @@ package game.map.task;
 
 import game.data.task.TaskListData;
 import game.map.IMap;
+import game.map.IParse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 故事集合表
  */
-public class MapTaskList implements IMap {
+public class MapTaskList implements IMap,IParse {
 	// 当前故事集合信息
-	HashMap<Integer, TaskListData> map;
-	HashMap<Integer, ArrayList<Integer>> mapList;
+	private Map<Integer, TaskListData> map;
+	private Map<Integer, ArrayList<Integer>> mapList;
 
-	private static MapTaskList data;
+	private static MapTaskList instance;
 
 	private MapTaskList() {
 		map = new HashMap<Integer, TaskListData>();
@@ -22,20 +24,20 @@ public class MapTaskList implements IMap {
 	}
 
 	public static MapTaskList getInstance() {
-		if (null == data)
-			data = new MapTaskList();
-		return data;
+		if (null == instance)
+			instance = new MapTaskList();
+		return instance;
 	}
 
 	public TaskListData getData(int listId) {
 		return map.get(listId);
 	}
 
-	public HashMap<Integer, ArrayList<Integer>> getList() {
+	public Map<Integer, ArrayList<Integer>> getList() {
 		return mapList;
 	}
 
-	public HashMap<Integer, TaskListData> toMap() {
+	public Map<Integer, TaskListData> getMap() {
 		return map;
 	}
 
@@ -53,5 +55,20 @@ public class MapTaskList implements IMap {
 				this.mapList.put(mapId, list);
 			}
 		}
+	}
+
+	@Override
+	public String getBeanName() {
+		return "value.task.list.so";
+	}
+
+	@Override
+	public String getIDataName() {
+		return TaskListData.class.getName();
+	}
+
+	@Override
+	public IMap getRoot() {
+		return this;
 	}
 }

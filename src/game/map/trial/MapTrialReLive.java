@@ -2,32 +2,34 @@ package game.map.trial;
 
 import game.data.trial.TrialReLiveData;
 import game.map.IMap;
+import game.map.IParse;
 
 import java.util.HashMap;
+import java.util.Map;
 
-public class MapTrialReLive implements IMap {
+public class MapTrialReLive implements IMap, IParse {
 
-	private static MapTrialReLive root;
+	private static MapTrialReLive instance;
 
-	private HashMap<Integer, TrialReLiveData> map;
+	private Map<Integer, TrialReLiveData> map;
 
 	private MapTrialReLive() {
 		map = new HashMap<Integer, TrialReLiveData>();
 	}
 
 	public static MapTrialReLive getInstance() {
-		if (null == root) {
-			root = new MapTrialReLive();
+		if (null == instance) {
+			instance = new MapTrialReLive();
 		}
-		return root;
+		return instance;
 	}
 
 	public static final void setRoot(MapTrialReLive root) {
-		MapTrialReLive.root = root;
+		MapTrialReLive.instance = root;
 	}
 
 	@Override
-	public HashMap<Integer, TrialReLiveData> toMap() {
+	public Map<Integer, TrialReLiveData> getMap() {
 		return map;
 	}
 
@@ -41,5 +43,20 @@ public class MapTrialReLive implements IMap {
 
 	public TrialReLiveData getData(int id) {
 		return map.get(id);
+	}
+
+	@Override
+	public String getBeanName() {
+		return "value.trial.relive.so";
+	}
+
+	@Override
+	public String getIDataName() {
+		return TrialReLiveData.class.getName();
+	}
+
+	@Override
+	public IMap getRoot() {
+		return this;
 	}
 }

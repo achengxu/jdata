@@ -80,7 +80,7 @@ public class GroupAttack2 implements IData, IGroup {
 		map.put("minDefense", minDefense);
 		return map;
 	}
-	
+
 	public String toString() {
 		return toMap().toString();
 	}

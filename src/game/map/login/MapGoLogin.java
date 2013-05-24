@@ -2,27 +2,27 @@ package game.map.login;
 
 import game.data.login.GoLoginData;
 import game.map.IMap;
+import game.map.IParse;
 
 import java.util.Map;
 
 /**
  * 连续登录奖励表
  */
-public class MapGoLogin implements IMap {
+public class MapGoLogin implements IMap,IParse {
 
-	private static MapGoLogin root;
+	private static MapGoLogin instance;
 
 	private GoLoginData data;
 
 	public static MapGoLogin getInstance() {
-		if (null == root) {
-			root = new MapGoLogin();
+		if (null == instance) {
+			instance = new MapGoLogin();
 		}
-		return root;
+		return instance;
 	}
 
-	@Override
-	public Map<?, ?> toMap() {
+	public Map<?, ?> getMap() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -43,5 +43,20 @@ public class MapGoLogin implements IMap {
 
 	public GoLoginData getData() {
 		return data;
+	}
+
+	@Override
+	public String getBeanName() {
+		return "value.get.gologin.so";
+	}
+
+	@Override
+	public String getIDataName() {
+		return GoLoginData.class.getName();
+	}
+
+	@Override
+	public IMap getRoot() {
+		return this;
 	}
 }

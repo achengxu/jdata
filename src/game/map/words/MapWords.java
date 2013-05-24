@@ -4,28 +4,28 @@ import game.data.words.WordsData;
 import game.map.IMap;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class MapWords implements IMap {
 
-	private static MapWords root;
+	private static MapWords instance;
 
-	private ArrayList<String> words;
+	private List<String> words;
 
 	private MapWords() {
 		words = new ArrayList<String>();
 	}
 
 	public static MapWords getInstance() {
-		if (null == root) {
-			root = new MapWords();
+		if (null == instance) {
+			instance = new MapWords();
 		}
-		return root;
+		return instance;
 	}
 
 	@Override
-	public Map<?, ?> toMap() {
-		// TODO Auto-generated method stub
+	public Map<?, ?> getMap() {
 		return null;
 	}
 

@@ -1,9 +1,9 @@
 package game.data.card;
 
+import game.data.IData;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import game.data.IData;
 
 public final class CardUpExpData implements IData {
 
@@ -23,7 +23,6 @@ public final class CardUpExpData implements IData {
 	/** 出售金币 */
 	private int sale;
 
-	
 	public final int getLevel() {
 		return level;
 	}

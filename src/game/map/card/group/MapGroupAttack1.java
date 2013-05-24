@@ -2,13 +2,14 @@ package game.map.card.group;
 
 import game.data.card.group.GroupAttack1;
 import game.map.IMap;
+import game.map.IParse;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapGroupAttack1 implements IMap {
+public class MapGroupAttack1 implements IMap,IParse {
 
-	private static MapGroupAttack1 root;
+	private static MapGroupAttack1 instance;
 
 	private Map<Integer, Map<Integer, GroupAttack1>> map;
 
@@ -17,13 +18,13 @@ public class MapGroupAttack1 implements IMap {
 	}
 
 	public static MapGroupAttack1 getInstance() {
-		if (null == root)
-			root = new MapGroupAttack1();
-		return root;
+		if (null == instance)
+			instance = new MapGroupAttack1();
+		return instance;
 	}
 
 	@Override
-	public Map<?, ?> toMap() {
+	public Map<?, ?> getMap() {
 		return map;
 	}
 
@@ -45,5 +46,20 @@ public class MapGroupAttack1 implements IMap {
 
 	public Map<Integer, GroupAttack1> getData(int start) {
 		return map.get(start);
+	}
+
+	@Override
+	public String getBeanName() {
+		return "value.group.attack1.so";
+	}
+
+	@Override
+	public String getIDataName() {
+		return GroupAttack1.class.getName();
+	}
+
+	@Override
+	public IMap getRoot() {
+		return this;
 	}
 }

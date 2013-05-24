@@ -2,30 +2,32 @@ package game.map.card;
 
 import game.data.card.CardTakeData;
 import game.map.IMap;
+import game.map.IParse;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 抽卡表
  */
-public final class MapCardTake implements IMap {
+public final class MapCardTake implements IMap, IParse {
 
-	private static MapCardTake root;
+	private static MapCardTake instance;
 
-	private HashMap<Integer, CardTakeData> map;
+	private Map<Integer, CardTakeData> map;
 
 	private MapCardTake() {
 		map = new HashMap<Integer, CardTakeData>();
 	}
 
 	public static MapCardTake getInstance() {
-		if (null == root) {
-			root = new MapCardTake();
+		if (null == instance) {
+			instance = new MapCardTake();
 		}
-		return root;
+		return instance;
 	}
 
-	public HashMap<Integer, CardTakeData> toMap() {
+	public Map<Integer, CardTakeData> getMap() {
 		return map;
 	}
 
@@ -39,6 +41,21 @@ public final class MapCardTake implements IMap {
 
 	public CardTakeData getData(int id) {
 		return map.get(id);
+	}
+
+	@Override
+	public String getBeanName() {
+		return "value.card.take.so";
+	}
+
+	@Override
+	public String getIDataName() {
+		return CardTakeData.class.getName();
+	}
+
+	@Override
+	public IMap getRoot() {
+		return this;
 	}
 
 }

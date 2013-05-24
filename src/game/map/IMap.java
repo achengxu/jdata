@@ -4,7 +4,7 @@ import java.util.Map;
 
 public interface IMap {
 
-	Map<?, ?> toMap();
+	Map<?, ?> getMap();
 
 	void add(Object obj);
 

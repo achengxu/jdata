@@ -2,11 +2,12 @@ package game.map.card;
 
 import game.data.card.CardUpExpData;
 import game.map.IMap;
+import game.map.IParse;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public final class MapCardUpExp implements IMap {
+public final class MapCardUpExp implements IMap,IParse {
 
 	private static MapCardUpExp instance;
 
@@ -24,7 +25,7 @@ public final class MapCardUpExp implements IMap {
 	}
 
 	@Override
-	public Map<?, ?> toMap() {
+	public Map<?, ?> getMap() {
 		return map;
 	}
 
@@ -46,5 +47,20 @@ public final class MapCardUpExp implements IMap {
 
 	public Map<Integer, CardUpExpData> getData(int start) {
 		return map.get(start);
+	}
+
+	@Override
+	public String getBeanName() {
+		return "value.card.upexp.so";
+	}
+
+	@Override
+	public String getIDataName() {
+		return CardUpExpData.class.getName();
+	}
+
+	@Override
+	public IMap getRoot() {
+		return this;
 	}
 }
