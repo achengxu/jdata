@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 故事集合表
  */
-public class MapTaskList implements IMap,IParse {
+public class MapTaskList implements IMap, IParse {
 	// 当前故事集合信息
 	private Map<Integer, TaskListData> map;
 	private Map<Integer, ArrayList<Integer>> mapList;

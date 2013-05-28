@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 碎片表
  */
-public class MapSoul implements IMap,IParse {
+public class MapSoul implements IMap, IParse {
 
 	private static MapSoul instance;
 

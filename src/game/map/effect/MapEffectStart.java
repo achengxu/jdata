@@ -1,11 +1,11 @@
 package game.map.effect;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import game.data.effect.EffectStartData;
 import game.map.IMap;
 import game.map.IParse;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p>
@@ -22,7 +22,7 @@ import game.map.IParse;
  * @version 1.0 2013-5-24
  */
 
-public final class MapEffectStart implements IMap,IParse {
+public final class MapEffectStart implements IMap, IParse {
 
 	private static MapEffectStart instance;
 

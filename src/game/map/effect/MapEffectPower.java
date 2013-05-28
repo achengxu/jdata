@@ -23,7 +23,7 @@ import java.util.Map;
  * @version 1.0 2013-5-24
  */
 
-public final class MapEffectPower implements IMap,IParse {
+public final class MapEffectPower implements IMap, IParse {
 
 	private static EffectItemData instance;
 

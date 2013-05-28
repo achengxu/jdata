@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * PVP 获得奖励表
  */
-public final class MapSoulGet implements IMap,IParse {
+public final class MapSoulGet implements IMap, IParse {
 
 	private static MapSoulGet instance;
 

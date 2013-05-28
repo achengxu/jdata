@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * 连续登录奖励表
  */
-public class MapGoLogin implements IMap,IParse {
+public class MapGoLogin implements IMap, IParse {
 
 	private static MapGoLogin instance;
 

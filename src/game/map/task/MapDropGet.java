@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 掉落完成度表
  */
-public class MapDropGet implements IMap,IParse {
+public class MapDropGet implements IMap, IParse {
 
 	private static MapDropGet instance;
 

@@ -7,7 +7,7 @@ import game.map.IParse;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapTrialId implements IMap,IParse {
+public class MapTrialId implements IMap, IParse {
 
 	private static MapTrialId instance;
 

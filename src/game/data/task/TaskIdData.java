@@ -50,9 +50,9 @@ public class TaskIdData implements IData, IDropPackData {
 	private int oddsDropBox;
 	// 随机推送几率
 	private int oddsPush;
-	// 双倍经验几率
+	// 额外经验概率
 	private int oddsDExp;
-	// 双倍银币几率
+	// 额外银币概率
 	private int oddsDCoin;
 	// 随机boss几率
 	private int oddsBoss;
@@ -60,6 +60,12 @@ public class TaskIdData implements IData, IDropPackData {
 	private int passCoin;
 	/** 通关奖励元宝 */
 	private int passGold;
+	/** 额外经验倍率 */
+	private int oddsNExp;
+	/** 额外银币倍率 */
+	private int oddsNCoin;
+	/** 什么都不发生 */
+	private int none;
 
 	public final int getId() {
 		return id;
@@ -67,6 +73,30 @@ public class TaskIdData implements IData, IDropPackData {
 
 	public final void setId(int id) {
 		this.id = id;
+	}
+
+	public final int getOddsNExp() {
+		return oddsNExp;
+	}
+
+	public final void setOddsNExp(int oddsNExp) {
+		this.oddsNExp = oddsNExp;
+	}
+
+	public final int getOddsNCoin() {
+		return oddsNCoin;
+	}
+
+	public final void setOddsNCoin(int oddsNCoin) {
+		this.oddsNCoin = oddsNCoin;
+	}
+
+	public final int getNone() {
+		return none;
+	}
+
+	public final void setNone(int none) {
+		this.none = none;
 	}
 
 	public final String getName() {
@@ -285,9 +315,13 @@ public class TaskIdData implements IData, IDropPackData {
 		map.put("oddsPush", oddsPush);
 		map.put("oddsDExp", oddsDExp);
 		map.put("oddsDCoin", oddsDCoin);
+		map.put("oddsDropBox", oddsDropBox);
 		map.put("oddsBoss", oddsBoss);
 		map.put("passCoin", passCoin);
 		map.put("passGold", passGold);
+		map.put("none", none);
+		map.put("oddsNCoin", oddsNCoin);
+		map.put("oddsNExp", oddsNExp);
 		return map;
 	}
 

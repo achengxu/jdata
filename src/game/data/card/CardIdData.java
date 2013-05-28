@@ -36,6 +36,8 @@ public final class CardIdData implements IData, Cloneable {
 	private float attackMix;
 	/** 防御调整值 */
 	private float defenseMix;
+	/** 竖版 */
+	private String big;
 	/** 头像 */
 	private String head;
 	/** 造型 */
@@ -201,6 +203,14 @@ public final class CardIdData implements IData, Cloneable {
 		this.head = head;
 	}
 
+	public final String getBig() {
+		return big;
+	}
+
+	public final void setBig(String big) {
+		this.big = big;
+	}
+
 	public final String getImage() {
 		return image;
 	}
@@ -315,6 +325,7 @@ public final class CardIdData implements IData, Cloneable {
 		map.put("defenseMix", defenseMix);
 		map.put("head", head);
 		map.put("image", image);
+		map.put("big", big);
 		map.put("skills", skills);
 		map.put("uuid", uuid);
 		map.put("index", index);

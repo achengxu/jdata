@@ -1,7 +1,7 @@
 package game.data.card;
 
-import g.u.M2;
 import game.data.IData;
+import gear.util.MathUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -144,7 +144,7 @@ public class CardTakeData implements IData {
 	}
 
 	public int get() {
-		int random = M2.random(1, 10000);
+		int random = MathUtil.random(1, 10000);
 		List<Integer> list = new ArrayList<Integer>();
 		if (random < 40001) {
 			list = cardList1;
@@ -157,7 +157,7 @@ public class CardTakeData implements IData {
 		} else {
 			list = cardList5;
 		}
-		int index = M2.random(0, list.size() - 1);
+		int index = MathUtil.random(0, list.size() - 1);
 		return list.get(index);
 	}
 

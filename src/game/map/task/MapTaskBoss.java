@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 老板表
  */
-public class MapTaskBoss implements IMap,IParse {
+public class MapTaskBoss implements IMap, IParse {
 
 	private static MapTaskBoss instance;
 

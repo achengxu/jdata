@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 试炼次数表
  */
-public final class MapTrialLimit implements IMap,IParse {
+public final class MapTrialLimit implements IMap, IParse {
 
 	private static MapTrialLimit instance;
 

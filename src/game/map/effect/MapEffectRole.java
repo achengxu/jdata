@@ -43,7 +43,7 @@ public final class MapEffectRole implements IMap, IParse {
 		return instance;
 	}
 
-	public Map<Integer,EffectRoleData> getTypeMap(int type) {
+	public Map<Integer, EffectRoleData> getTypeMap(int type) {
 		return typeToData.get(type);
 	}
 
@@ -59,9 +59,9 @@ public final class MapEffectRole implements IMap, IParse {
 			map.put(data.getId(), data);
 			int type = data.getType();
 			int limit = data.getLimit();
-			if(typeToData.containsKey(type)){
+			if (typeToData.containsKey(type)) {
 				typeToData.get(type).put(limit, data);
-			}else{
+			} else {
 				Map<Integer, EffectRoleData> map = new HashMap<Integer, EffectRoleData>();
 				map.put(limit, data);
 				typeToData.put(type, map);

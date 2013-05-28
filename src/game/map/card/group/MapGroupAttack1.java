@@ -7,7 +7,7 @@ import game.map.IParse;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapGroupAttack1 implements IMap,IParse {
+public class MapGroupAttack1 implements IMap, IParse {
 
 	private static MapGroupAttack1 instance;
 

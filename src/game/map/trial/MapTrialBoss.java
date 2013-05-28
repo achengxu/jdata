@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 老板表
  */
-public class MapTrialBoss implements IMap,IParse {
+public class MapTrialBoss implements IMap, IParse {
 
 	private static MapTrialBoss instance;
 

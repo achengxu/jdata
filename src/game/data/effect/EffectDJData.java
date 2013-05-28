@@ -23,7 +23,7 @@ import java.util.Map;
  */
 
 public final class EffectDJData implements IData {
-	
+
 	private static final long serialVersionUID = 1L;
 	/** 编号 */
 	private int id;

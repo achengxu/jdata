@@ -16,10 +16,10 @@ package game.map;
  */
 
 public interface IParse {
-	
+
 	String getBeanName();
-	
+
 	String getIDataName();
-	
+
 	IMap getRoot();
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 消耗表
  */
-public class MapUsed implements IMap,IParse {
+public class MapUsed implements IMap, IParse {
 
 	private static MapUsed instance;
 

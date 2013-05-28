@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * 任务初始化表
  */
-public class MapTaskInit implements IMap,IParse {
+public class MapTaskInit implements IMap, IParse {
 
 	private static MapTaskInit instance;
 

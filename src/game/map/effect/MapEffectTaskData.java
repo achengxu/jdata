@@ -22,7 +22,7 @@ import java.util.Map;
  * @version 1.0 2013-5-24
  */
 
-public final class MapEffectTaskData implements IMap,IParse {
+public final class MapEffectTaskData implements IMap, IParse {
 
 	private static MapEffectTaskData instance;
 

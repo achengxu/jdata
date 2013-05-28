@@ -7,7 +7,7 @@ import game.map.IParse;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class MapCardUpExp implements IMap,IParse {
+public final class MapCardUpExp implements IMap, IParse {
 
 	private static MapCardUpExp instance;
 

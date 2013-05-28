@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 任务表
  */
-public class MapTaskId implements IMap,IParse {
+public class MapTaskId implements IMap, IParse {
 
 	private static MapTaskId instance;
 

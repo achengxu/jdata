@@ -7,7 +7,7 @@ import game.map.IParse;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapDropPack implements IMap,IParse {
+public class MapDropPack implements IMap, IParse {
 
 	private static MapDropPack instance;
 
