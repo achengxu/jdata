@@ -49,6 +49,7 @@ public class MapCardId implements IMap, IParse {
 		try {
 			data = map.get(cardId).clone();
 		} catch (Exception e) {
+			System.out.println(cardId);
 			e.printStackTrace();
 		}
 		return data;
